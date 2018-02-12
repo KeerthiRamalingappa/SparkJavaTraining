@@ -10,21 +10,28 @@ public class Main {
 
     public static void main(String[] args){
 
-        //Create a SparkContext to initialize
-        SparkConf conf = new SparkConf().setMaster("local").setAppName("Word Count");
+//        //Create a SparkContext to initialize
+//        SparkConf conf = new SparkConf().setMaster("local").setAppName("Word Count");
+//
+//        // Create a Java version of the Spark Context
+//        JavaSparkContext sc = new JavaSparkContext(conf);
+//
+//        // Load the text into a Spark RDD, which is a distributed representation of each line of text
+//        JavaRDD<String> textFile = sc.textFile("src/main/resources/Shakespeare.txt");
+////        JavaPairRDD<String, Integer> counts = textFile
+////                .flatMap(s -> Arrays.asList(s.split("[ ,]")).iterator())
+////                .mapToPair(word -> new Tuple2<>(word, 1))
+////                .reduceByKey((a, b) -> a + b);
+////        counts.foreach(p -> System.out.println(p));
+////        System.out.println("Total words: " + counts.count());
+////        counts.saveAsTextFile("src/main/output.txt");
+//    }
 
-        // Create a Java version of the Spark Context
-        JavaSparkContext sc = new JavaSparkContext(conf);
-
-        // Load the text into a Spark RDD, which is a distributed representation of each line of text
-        JavaRDD<String> textFile = sc.textFile("src/main/resources/Shakespeare.txt");
-        JavaPairRDD<String, Integer> counts = textFile
-                .flatMap(s -> Arrays.asList(s.split("[ ,]")).iterator())
-                .mapToPair(word -> new Tuple2<>(word, 1))
-                .reduceByKey((a, b) -> a + b);
-        counts.foreach(p -> System.out.println(p));
-        System.out.println("Total words: " + counts.count());
-        counts.saveAsTextFile("src/main/output.txt");
+    	ReadFile rf= new ReadFile();
+    	rf.readCsvFile();
+    	
+    	//rf.hello();
     }
-
-}
+    
+    
+    }
