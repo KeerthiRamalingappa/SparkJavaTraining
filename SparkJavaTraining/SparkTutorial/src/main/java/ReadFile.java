@@ -1,6 +1,4 @@
 import org.apache.spark.SparkConf;
-
-
 import org.apache.spark.api.java.JavaSparkContext;
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
@@ -23,8 +21,8 @@ public  class ReadFile {
 	//JavaSparkContext sc = new JavaSparkContext(conf);
 		
 		System.out.println("hello");
-	
-	SparkSession spark=SparkSession.builder().master("local").appName("assignment1").getOrCreate();
+	 // config is for Spark 2.0
+	SparkSession spark=SparkSession.builder().master("local").appName("assignment1").config("spark.sql.warehouse.dir","C:\\Users\\Keerthi\\spark").getOrCreate();
 	//JavaSparkContext sc=new JavaSparkContext(spark.sparkContext());
 	
 	
@@ -36,13 +34,16 @@ public  class ReadFile {
 	
 	Dataset<Row> inputDf = spark.read().format("csv").option("inferSchema", "true")
 			.option("header", "true")
-			.load("C:\\Users\\Keerthi\\Documents\\SparkAssignments\\assignment1_accountdata.csv");
+			.load("C:\\Users\\Keerthi\\Documents\\SparkAssignments\\assignment_1accountdata.csv");
 	
 	
 	inputDf.write().format("csv")
-	.option("header", "true").save("C:\\Users\\Keerthi\\Documents\\SparkAssignments\\read_write.csv");
+	.save("C:\\Users\\Keerthi\\Documents\\SparkAssignments\\read_write.csv");
 	}
-
+    
+	//.option("header", "true")
+	
+	
 }
 
 
