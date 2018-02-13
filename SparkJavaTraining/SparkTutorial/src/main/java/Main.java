@@ -28,9 +28,13 @@ public class Main {
 //    }
 
     	ReadFile rf= new ReadFile();
-    	rf.readCsvFile();
+     	rf.readCsvFile();
     	
     	//rf.hello();
+    	
+    	
+    	FilterOper fo= new FilterOper();
+    	fo.removeRecord();
     }
     
     
