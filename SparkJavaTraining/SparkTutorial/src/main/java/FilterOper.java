@@ -41,6 +41,8 @@ public class FilterOper implements Serializable {
 		}
 	});
 	
+	String path="C:\\Users\\Keerthi\\Documents\\SparkAssignments\\output1.csv";
+	outputRDD.saveAsTextFile(path);
 	}
 	
 	
