@@ -6,6 +6,7 @@ import org.apache.spark.api.java.function.Function;
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
 import org.apache.spark.sql.SparkSession;
+import org.apache.spark.sql.api.java.StructType;
 
 public class FilterOper implements Serializable {
 
@@ -13,10 +14,12 @@ public class FilterOper implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	private Object subvalues;
+	private JavaRDD<String> outputRDD;
 	
 	
 	
-	public void removeRecord(){
+	 public void removeRecord(){
 		
     //String outputDirectory="C:\\Users\\Keerthi\\Documents\\SparkAssignments\\assignment_1accountdata1.csv";
 		
@@ -45,6 +48,21 @@ public class FilterOper implements Serializable {
 	outputRDD.saveAsTextFile(path);
 	}
 	
+	
+	// JavaRDD<String> removeLoan = outputRDD.filter(subvalues);
+	 
+	 
+	
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
 	
 }
 

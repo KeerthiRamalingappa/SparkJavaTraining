@@ -9,6 +9,7 @@ import java.util.Arrays;
 public class Main {
 
     public static void main(String[] args){
+    	
 
 //        //Create a SparkContext to initialize
 //        SparkConf conf = new SparkConf().setMaster("local").setAppName("Word Count");
@@ -18,23 +19,33 @@ public class Main {
 //
 //        // Load the text into a Spark RDD, which is a distributed representation of each line of text
 //        JavaRDD<String> textFile = sc.textFile("src/main/resources/Shakespeare.txt");
-////        JavaPairRDD<String, Integer> counts = textFile
-////                .flatMap(s -> Arrays.asList(s.split("[ ,]")).iterator())
-////                .mapToPair(word -> new Tuple2<>(word, 1))
-////                .reduceByKey((a, b) -> a + b);
-////        counts.foreach(p -> System.out.println(p));
-////        System.out.println("Total words: " + counts.count());
-////        counts.saveAsTextFile("src/main/output.txt");
+//        JavaPairRDD<String, Integer> counts = textFile
+//                .flatMap(s -> Arrays.asList(s.split("[ ,]")).iterator())
+//                .mapToPair(word -> new Tuple2<>(word, 1))
+//                .reduceByKey((a, b) -> a + b);
+//        counts.foreach(p -> System.out.println(p));
+//        System.out.println("Total words: " + counts.count());
+//        counts.saveAsTextFile("src/main/output.txt");
 //    }
 
-    	ReadFile rf= new ReadFile();
-  	rf.readCsvFile();
+    	//read and write the csv file
+    	
+//    	ReadFile rf= new ReadFile();
+//  	    rf.readCsvFile();
     	
     	//rf.hello();
     	
+    	// filter the values containing code="c";
+  	    
+//    	FilterOper fo= new FilterOper();
+//    	fo.removeRecord();
     	
-    	FilterOper fo= new FilterOper();
-    	fo.removeRecord();
+    	
+    	//read and print schema using dataframes. 
+    	
+    	PassSchema ps =new PassSchema();
+    	ps.pass();
+    	
     }
     
     
